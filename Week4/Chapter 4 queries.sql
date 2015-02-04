@@ -1,9 +1,11 @@
 USE rotten_potatoes;
 
-
--- List all the movies with release year
-SELECT CONCAT(m.title, ' (', m.release_year, ')') AS name
-FROM movies m;
+-- All ratings for Alien
+SELECT CONCAT(c.first_name, ' ', c.last_name) AS critic, r.rating
+FROM movies m
+JOIN ratings r ON r.movie_id = m.movie_id
+JOIN critics c ON c.critic_id = r.critic_id
+WHERE m.title = 'Alien';
 
 -- All of Adam Adonis's ratings greater than or equal to 6
 SELECT m.title, m.release_year, r.rating
