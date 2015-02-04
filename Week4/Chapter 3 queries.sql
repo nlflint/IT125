@@ -8,7 +8,7 @@ ORDER BY vendor_contact_last_name, vendor_contact_first_name;
 -- #7 from Chapter 3 exercies
 SELECT CONCAT(vendor_contact_last_name, ', ', vendor_contact_first_name) AS full_name
 FROM vendors
-WHERE LEFT(vendor_contact_last_name,1) in ('A','B','C','E')
+WHERE LEFT(vendor_contact_last_name, 1) in ('A','B','C','E')
 ORDER BY vendor_contact_last_name, vendor_contact_first_name;
 
 -- #8 from Chapter 3 exercies

@@ -20,12 +20,13 @@ WHERE c.first_name = 'Adam'
 	AND c.last_name = 'Adonis'
 	AND r.rating >= 6;
 
--- Movies and their genres
+-- All Movies and their genres
 SELECT CONCAT(m.title, ' (', m.release_year, ')') AS movie, g.genre
 FROM movies m
 	JOIN movie_genres mg
 		ON m.movie_id = mg.movie_id
-JOIN genres g ON g.genre_id = mg.genre_id;
+	JOIN genres g 
+		ON g.genre_id = mg.genre_id;
 
 -- first 5 ratings made in 2012
 SELECT CONCAT(m.title, ' (', m.release_year, ')') AS movie, r.rating, CONCAT(c.first_name, ' ', c.last_name) AS critic
