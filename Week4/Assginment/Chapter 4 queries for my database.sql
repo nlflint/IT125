@@ -1,6 +1,6 @@
 USE rotten_potatoes;
 
--- All ratings for Alien
+-- #1 All ratings for Alien
 SELECT CONCAT(c.first_name, ' ', c.last_name) AS critic, r.rating
 FROM movies m
 	JOIN ratings r
@@ -9,7 +9,7 @@ FROM movies m
 		ON c.critic_id = r.critic_id
 WHERE m.title = 'Alien';
 
--- All of Adam Adonis's ratings greater than or equal to 6
+-- #2 All of Adam Adonis's ratings greater than or equal to 6
 SELECT m.title, m.release_year, r.rating
 FROM critics c
 	JOIN ratings r
@@ -20,7 +20,7 @@ WHERE c.first_name = 'Adam'
 	AND c.last_name = 'Adonis'
 	AND r.rating >= 6;
 
--- All Movies and their genres
+-- #3 All Movies and their genres
 SELECT CONCAT(m.title, ' (', m.release_year, ')') AS movie, g.genre
 FROM movies m
 	JOIN movie_genres mg
@@ -28,7 +28,7 @@ FROM movies m
 	JOIN genres g 
 		ON g.genre_id = mg.genre_id;
 
--- first 5 ratings made in 2012
+-- #4 first 5 ratings made by critics in 2012
 SELECT CONCAT(m.title, ' (', m.release_year, ')') AS movie, r.rating, CONCAT(c.first_name, ' ', c.last_name) AS critic
 FROM ratings r
 	JOIN movies m
