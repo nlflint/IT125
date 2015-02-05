@@ -27,3 +27,4 @@ FROM invoices
 HAVING balance_due > 50
 ORDER BY balance_due DESC
 LIMIT 5;
+
