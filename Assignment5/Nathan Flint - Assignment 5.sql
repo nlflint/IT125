@@ -1,3 +1,7 @@
+-- Nathan Flint
+-- Assignment 5
+
+use ap;
 -- Problem #1
 select distinct vendor_name
 from vendors
@@ -43,7 +47,7 @@ where i.invoice_id in
 );
 
 -- Problem #5
-select sum(invoice_total)
+select sum(invoice_total) as sum_of_largest_invoice
 from
 (
 	select vendor_id, max(invoice_total) as invoice_total
